@@ -6,23 +6,6 @@
 	<title>Document</title>
 </head>
 <body>
-	<table>
-		<tread>
-			<tr>
-				<th>ID</th>
-				<th>Username</th>
-				<th>Email</th>
-				<th>Role</th>
-			</tr>
-		</tread>
-		<tbody>
-			<?php
-				foreach ($users as $u) {
-					
-				}
-			?>
-			<p>test</p>
-		</tbody>
-	</table>
+
 </body>
 </html>
