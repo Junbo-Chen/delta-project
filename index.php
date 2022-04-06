@@ -6,6 +6,6 @@
 	<title>Document</title>
 </head>
 <body>
-
+	<?php require_once 'head.php'?>
 </body>
 </html>
