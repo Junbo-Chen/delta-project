@@ -6,6 +6,6 @@
 		<img src="img/winkeltje.png" alt="">
 	</div>	
 	<a href="inlog.php">inlogen</a>
-	<a href="product.php">pruduct</a>
+	<a href="index.php">pruduct</a>
 	<a href="winkelmand.php">winkelmand</a>
 </header>
