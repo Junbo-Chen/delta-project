@@ -7,6 +7,13 @@
 	<title>Document</title>
 </head>
 <body>
+	<?php
+		require_once 'backend/conn.php';
+        $query = "SELECT * FROM product";
+        $statement = $conn->prepare($query);
+        $statement->execute();
+        $items = $statement->fetchAll(PDO::FETCH_ASSOC);
+    ?>
 	<div class="wrapper">
 		<?php require_once 'head.php'?>
 		<h1>welkom bij onze website</h1>
@@ -17,10 +24,11 @@
 				<td><img src="img/schoen..jpg"width="250px"></td>
 				<td><img src="img/siraden.webp" width="250px"></td>
 			</tr>
-			<td><p>broek</p><br><p>prijs: €10</p><p><a href="add.php">kopen</a></p></td>
-			<td><p>t-shirt</p><br><p>prijs: €10</p><p><a href="add.php">kopen</a></p></td>
-			<td><p>schoen</p><br><p>prijs: €120</p><p><a href="add.php">kopen</a></p></td>
-			<td><p>siraden</p><br><p>prijs: €58000</p><p><a href="add.php">kopen</a></p></td>
+				<td><p>broek</p><p>prijs: €10</p><p><a href="add.php">kopen</a></p></td>
+				<td><p>t-shirt</p><p>prijs: €10</p><p><a href="add.php">kopen</a></p></td>
+				<td><p>schoen</p><p>prijs: €120</p><p><a href="add.php">kopen</a></p></td>
+				<td><p>siraden</p><p>prijs: €58000</p><p><a href="add.php">kopen</a></p></td>
+	
 		</table>
 
 	</div>	
