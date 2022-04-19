@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/main.css">
-	<title>Document</title>
+	<title>Winkeltje</title>
 </head>
 <body>
 	<?php
@@ -16,7 +16,7 @@
     ?>
 	<div class="wrapper">
 		<?php require_once 'head.php'?>
-		<h1>welkom bij onze website</h1>
+		<h1>Welkom bij onze website</h1>
 		<table width="100%">
 			<tr>
 				<td><img src="img/broek.jpg" width="250px"></td>
@@ -24,10 +24,10 @@
 				<td><img src="img/schoen..jpg"width="250px"></td>
 				<td><img src="img/siraden.webp" width="250px"></td>
 			</tr>
-				<td><p>broek</p><p>prijs: €10</p><p><a href="add.php">kopen</a></p></td>
-				<td><p>t-shirt</p><p>prijs: €10</p><p><a href="add.php">kopen</a></p></td>
-				<td><p>schoen</p><p>prijs: €120</p><p><a href="add.php">kopen</a></p></td>
-				<td><p>siraden</p><p>prijs: €58000</p><p><a href="add.php">kopen</a></p></td>
+				<td><p>broek</p><p>prijs: €10</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
+				<td><p>t-shirt</p><p>prijs: €10</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
+				<td><p>schoen</p><p>prijs: €120</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
+				<td><p>sieraden</p><p>prijs: €58000</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
 	
 		</table>
 
