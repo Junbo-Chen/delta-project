@@ -1,3 +1,3 @@
 <footer>
-    <p>footertjeeuehh</p>
+    <p>&copy 2022 Fabian en Junbo</p>
 </footer>
