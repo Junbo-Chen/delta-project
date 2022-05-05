@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="<?php echo $base_url; ?>/css/normalize.css">
 	<link rel="stylesheet" href="<?php echo $base_url; ?>/css/main.css">
 	<title>Winkeltje</title>
@@ -52,20 +54,6 @@
 	        </div>
     	</form>
 		<a href="winkelmand.php"></a>
-		<h1>Welkom bij onze website</h1>
-		<table width="100%">
-			<tr>
-				<td><img src="img/broek.jpg" width="250px"></td>
-				<td><img src="img/t-shirt.webp" width="250px"></td>
-				<td><img src="img/schoen..jpg"width="250px"></td>
-				<td><img src="img/siraden.webp" width="250px"></td>
-			</tr>
-				<td><p>broek</p><p>prijs: €10</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
-				<td><p>t-shirt</p><p>prijs: €10</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
-				<td><p>schoen</p><p>prijs: €120</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
-				<td><p>sieraden</p><p>prijs: €58000</p><p><a href="add.php">Toevoegen aan winkelmand</a></p></td>
-	
-		</table>
 
 	</div>	
 </body>
