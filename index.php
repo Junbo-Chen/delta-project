@@ -9,26 +9,14 @@
 	<title>Winkeltje</title>
 </head>
 <body>
-	<?php
+		<?php
+		session_start();
 		require_once 'backend/conn.php';
         $query = "SELECT * FROM product";
         $statement = $conn->prepare($query);
         $statement->execute();
         $items = $statement->fetchAll(PDO::FETCH_ASSOC);
-        if (isset($_POST['add_to_cart'])) {
-        	$name = $_POST['name'];
-        	$price = $_POST['price'];
-        	$stock = 1;
-        	$select_order = mysqli_quety("SELECT * from 'order' where name = '$name'");
-        	if(mysqli_num_rows($select_order > 0)){
-        		$items[] = 'product already';
-        	}else{
-        		$insert_product = mysqli_query("INSERT INTO 'product'(name, price, stock)
-        			VALUES('$name','$price', '$stock'");
-        		$items[] = 'added to cart';
-        	}
-        }
-    ?>
+        ?>
 	<div class="wrapper">
 		<?php require_once 'head.php'?>
 		<h1>welkom bij onze website</h1>
@@ -38,26 +26,56 @@
 	            <img src="img/schoen.jpg"width="250px">
 	            <img src="img/siraden.webp" width="250px">
 	    </div>
-		<form action="productController.php" method="POST">
-	        <div class="box2">
-	        	<?php foreach ($items as $i): ?>
-	        		<div class="box3">
-	        			<h3><?php echo $i["name"];?></h3>
-	        			<p>prijs €<?php echo $i["price"]?></p>
-	        			<p><?php echo $i["description"]?></p>
-	        			<p>aantal: <?php echo $i['stock']?></p>
-	        			<input type="hidden" value="<?php echo $i["name"];?>">
-	        			<input type="hidden" value="<?php echo $i["price"];?>">
-	        			<input type="submit" value="add to cart" name="add_to_cart">
-	        		</div>	
-	        	<?php endforeach ?>	
-	        </div>
+	    <div class="box2">
+		<form action="backend/productController.php" method="POST">
+			<input type="hidden" name="action" value="add">
+	        	<div class="box3">
+		        	<label>broek</label>
+		        	<label>€10</label>
+	    			<input type="hidden" name="name"value="broek">
+	    			<input type="hidden" name="price"value="10">
+	    			<input type="number" name="quantity" id="quantity"value="1">
+	    			<input type="submit" value="add to cart">
+	    		</div>		
     	</form>
-		<a href="winkelmand.php"></a>
+    	<form action="backend/productController.php" method="POST">
+			<input type="hidden" name="action" value="add">
+	        	<div class="box3">
+		        	<label>t-shirt</label>
+		        	<label>€10</label>
+	    			<input type="hidden" name="name"value="t-shirt">
+	    			<input type="hidden" name="price"value="10">
+	    			<input type="number" name="quantity" id="quantity"value="1">
+	    			<input type="submit" value="add to cart">
+	    		</div>		
+    	</form>
+    	<form action="backend/productController.php" method="POST">
+			<input type="hidden" name="action" value="add">
+	        	<div class="box3">
+		        	<label>schoen</label>
+		        	<label>€100</label>
+	    			<input type="hidden" name="name"value="schoen">
+	    			<input type="hidden" name="price"value="100">
+	    			<input type="number" name="quantity" id="quantity"value="1">
+	    			<input type="submit" value="add to cart">
+	    		</div>		
+    	</form>
+    	<form action="backend/productController.php" method="POST">
+			<input type="hidden" name="action" value="add">
+	        	<div class="box3">
+		        	<label>siraden</label>
+		        	<label>€51080</label>
+	    			<input type="hidden" name="name"value="siraden">
+	    			<input type="hidden" name="price"value="51080">
+	    			<input type="number" name="quantity" id="quantity"value="1">
+	    			<input type="submit" value="add to cart">
+	    		</div>		
+    	</form>
 
+    	 </div>
 	</div>	
 </body>
 <?php 
-require_once("footer.php")
+require_once("footer.php");
 ?>
 </html>

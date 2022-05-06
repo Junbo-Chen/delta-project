@@ -8,10 +8,6 @@
 header img{
 	width: 10%;
 }	
-td p{
-	padding-left: 100px;
-}
-
 table img{
 	width: 150px;
 	margin-bottom: 100px;
@@ -27,5 +23,11 @@ table img{
 .box3{
 	display: flex;
 	flex-direction: column;
+	padding-left: 60px;
 }
+table{
+  width: 70vw;
+  text-align: left;
+}
+
 

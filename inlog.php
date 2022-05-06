@@ -12,11 +12,12 @@
 	<div class="wrapper">
 		<?php require_once 'head.php'?>
 		<h1>inloggen</h1>
-	<form action="../backend/webshop.php" method="POST">
+	<form action="backend/inlogController.php" method="POST">
 		Gebruikersnaam:
 		<input type="text" name="uid">
 		wachtwoord:
 		<input type="text" name="pw">
+		<input type="submit" value="Login">
 	</form>	
 </div>
 </body>
