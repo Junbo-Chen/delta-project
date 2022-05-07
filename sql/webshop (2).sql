@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 19 apr 2022 om 13:27
+-- Gegenereerd op: 07 mei 2022 om 02:04
 -- Serverversie: 10.4.21-MariaDB
 -- PHP-versie: 8.0.10
 
@@ -35,16 +35,25 @@ CREATE TABLE `categories` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `orders`
+-- Tabelstructuur voor tabel `order`
 --
 
-CREATE TABLE `orders` (
+CREATE TABLE `order` (
   `id` int(11) NOT NULL,
-  `order_number` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
-  `name` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`name`)),
-  `email_recipient` varchar(25) NOT NULL
+  `name` varchar(225) NOT NULL,
+  `price` double NOT NULL,
+  `quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `order`
+--
+
+INSERT INTO `order` (`id`, `name`, `price`, `quantity`) VALUES
+(5, 'siraden', 51080, 1),
+(6, 't-shirt', 10, 1),
+(7, 't-shirt', 10, 5),
+(8, 't-shirt', 10, 5);
 
 -- --------------------------------------------------------
 
@@ -56,20 +65,18 @@ CREATE TABLE `product` (
   `ID` int(11) NOT NULL,
   `name` text NOT NULL,
   `price` double NOT NULL,
-  `stock` int(11) NOT NULL,
-  `description` text NOT NULL,
-  `category` int(11) NOT NULL
+  `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `product`
 --
 
-INSERT INTO `product` (`ID`, `name`, `price`, `stock`, `description`, `category`) VALUES
-(11, 'broek', 10, 2, 'goeie broek', 0),
-(13, 't-shirt', 10, 2, 'goeie t-shirt', 0),
-(15, 'schoen', 120, 2, 'goeie schoen kun je mee lopen', 0),
-(16, 'siraden', 58000, 1, 'mooi ketting heel mooi moet je kopen', 0);
+INSERT INTO `product` (`ID`, `name`, `price`, `description`) VALUES
+(11, 'broek', 10, 'goeie broek'),
+(13, 't-shirt', 10, 'goeie t-shirt'),
+(15, 'schoen', 120, 'goeie schoen kun je mee lopen'),
+(18, 'siraden', 51897, 'een mooie ketting');
 
 -- --------------------------------------------------------
 
@@ -85,25 +92,31 @@ CREATE TABLE `status` (
 -- --------------------------------------------------------
 
 --
--- Tabelstructuur voor tabel `users`
+-- Tabelstructuur voor tabel `user`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
-  `username` varchar(10) NOT NULL,
-  `password` varchar(10) NOT NULL,
-  `name` varchar(10) NOT NULL,
-  `email` varchar(10) NOT NULL
+  `name` text NOT NULL,
+  `username` varchar(225) NOT NULL,
+  `password` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `username`, `password`) VALUES
+(1, 'gebruiker1', 'user1', '$2y$10$XQwbcsOWgM0KvAbya2Ad2efBwTLra2CzeduJtAuY8.BW9EHx.cFKa');
 
 --
 -- Indexen voor geëxporteerde tabellen
 --
 
 --
--- Indexen voor tabel `orders`
+-- Indexen voor tabel `order`
 --
-ALTER TABLE `orders`
+ALTER TABLE `order`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -119,9 +132,9 @@ ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexen voor tabel `users`
+-- Indexen voor tabel `user`
 --
-ALTER TABLE `users`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -129,16 +142,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT voor een tabel `orders`
+-- AUTO_INCREMENT voor een tabel `order`
 --
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT voor een tabel `product`
 --
 ALTER TABLE `product`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT voor een tabel `status`
@@ -147,10 +160,10 @@ ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT voor een tabel `users`
+-- AUTO_INCREMENT voor een tabel `user`
 --
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
